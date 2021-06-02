@@ -23,4 +23,16 @@
         android:layout_marginTop="16dp"
         android:text="Take Picture" />
 
+    <Button
+        android:id="@+id/btnUpload"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Upload image" />
+
+    <TextView
+        android:id="@+id/tvResnponse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
 </LinearLayout>
