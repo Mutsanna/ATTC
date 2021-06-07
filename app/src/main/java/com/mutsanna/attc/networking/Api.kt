@@ -1,5 +1,6 @@
 package com.mutsanna.attc.networking
 
+import okhttp3.MultipartBody
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -10,7 +11,9 @@ interface Api {
     @Multipart
     @POST("predict")
     fun createPost(
-        @Part image: String?
+        @Part image: MultipartBody.Part
     ): Call<CreatePostResponse>
+
+//    abstract fun createPost(image: String): Call<CreatePostResponse>
 
 }
