@@ -2,26 +2,26 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/home"
+        android:id="@+id/nav_home"
         android:icon="@drawable/ic_home"
         android:title="@string/home" />
 
     <item
-        android:id="@+id/History"
+        android:id="@+id/nav_history"
         android:icon="@drawable/ic_history"
         android:title="@string/history" />
 
     <item
-        android:id="@+id/placeholder"
+        android:id="@+id/cam"
         android:title="" />
 
     <item
-        android:id="@+id/Location"
+        android:id="@+id/nav_location"
         android:icon="@drawable/ic_location"
         android:title="@string/location" />
 
     <item
-        android:id="@+id/About"
+        android:id="@+id/nav_abou"
         android:icon="@drawable/ic_people"
         android:title="@string/about_us" />
 

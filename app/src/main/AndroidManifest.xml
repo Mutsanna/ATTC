@@ -14,10 +14,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ATTC">
+        <activity android:name=".SlideActivity"></activity>
 
         <provider
-            android:authorities="com.mutsanna.attc.fileprovider"
             android:name="androidx.core.content.FileProvider"
+            android:authorities="com.mutsanna.attc.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
@@ -25,21 +26,15 @@
                 android:resource="@xml/fileprovider" />
         </provider>
 
-        <activity android:name=".CameraActivity">
+        <activity android:name=".CameraActivity"></activity>
+        <activity android:name=".OutputActivity" />
+        <activity android:name=".RiwayatActivity" />
+        <activity android:name=".HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".OutputActivity" />
-        <activity android:name=".RiwayatActivity" />
-        <activity android:name=".HomeActivity">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
         </activity>
     </application>
 
