@@ -5,10 +5,9 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.mutsanna.attc.camera.CameraActivity
-import com.mutsanna.attc.HomeFragment
-import com.mutsanna.attc.LocationFragment
 import com.mutsanna.attc.R
 import com.mutsanna.attc.databinding.ActivityHomeBinding
+import com.mutsanna.attc.location.LocationFragment
 import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : AppCompatActivity() {
