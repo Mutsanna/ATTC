@@ -11,4 +11,10 @@
     <string name="judul_home">Sesuaikan\nPackaging\nAnda</string>
     <string name="slide_salah">Pengambilan Gambar\nyang Tidak Sesuai</string>
     <string name="desc1">Gambar tidak Fokus\npada 1 jenis kue</string>
+    <string name="judul_lokasi">Lokasi \nRumah Kemasan</string>
+    <string name="slide_benar">Pengambilan Gambar\nyang Benar</string>
+    <string name="back">Back</string>
+    <string name="next">Next</string>
+    <string name="start">Lets Go</string>
+    <string name="skip">Skip</string>
 </resources>

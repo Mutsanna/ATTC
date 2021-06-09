@@ -1,19 +1,23 @@
-package com.mutsanna.attc
+package com.mutsanna.attc.camera
 
+//import android.graphics.BitmapFactory
+//import android.os.Environment
+//import androidx.core.content.FileProvider
+
+import android.R
 import android.app.Activity
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.graphics.Bitmap
-//import android.graphics.BitmapFactory
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-//import android.os.Environment
 import android.provider.MediaStore
 import android.provider.Settings
+import android.view.View
+import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-//import androidx.core.content.FileProvider
+import androidx.appcompat.app.AppCompatActivity
 import coil.load
 import coil.transform.CircleCropTransformation
 import com.karumi.dexter.Dexter
@@ -24,6 +28,7 @@ import com.karumi.dexter.listener.PermissionGrantedResponse
 import com.karumi.dexter.listener.PermissionRequest
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener
 import com.karumi.dexter.listener.single.PermissionListener
+import com.mutsanna.attc.camera.slideshow.PrefManager
 import com.mutsanna.attc.databinding.ActivityCameraBinding
 import com.mutsanna.attc.networking.AppClient
 import com.mutsanna.attc.networking.CreatePostResponse
@@ -35,7 +40,6 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.io.ByteArrayOutputStream
-import java.io.File
 import java.util.*
 
 
@@ -67,8 +71,10 @@ class CameraActivity : AppCompatActivity() {
         binding.imageView.setOnClickListener {
             val pictureDialog = AlertDialog.Builder(this)
             pictureDialog.setTitle("Select Action")
-            val pictureDialogItem = arrayOf("Select photo from Gallery",
-                "Capture photo from Camera")
+            val pictureDialogItem = arrayOf(
+                "Select photo from Gallery",
+                "Capture photo from Camera"
+            )
             pictureDialog.setItems(pictureDialogItem) { dialog, which ->
 
                 when (which) {
@@ -101,7 +107,8 @@ class CameraActivity : AppCompatActivity() {
             }
 
             override fun onPermissionRationaleShouldBeShown(
-                p0: PermissionRequest?, p1: PermissionToken?) {
+                p0: PermissionRequest?, p1: PermissionToken?
+            ) {
                 showRotationalDialogForPermission()
             }
         }).onSameThread().check()
@@ -119,7 +126,8 @@ class CameraActivity : AppCompatActivity() {
         Dexter.withContext(this)
             .withPermissions(
                 android.Manifest.permission.READ_EXTERNAL_STORAGE,
-                android.Manifest.permission.CAMERA).withListener(
+                android.Manifest.permission.CAMERA
+            ).withListener(
 
                 object : MultiplePermissionsListener {
                     override fun onPermissionsChecked(report: MultiplePermissionsReport?) {
@@ -134,7 +142,8 @@ class CameraActivity : AppCompatActivity() {
 
                     override fun onPermissionRationaleShouldBeShown(
                         p0: MutableList<PermissionRequest>?,
-                        p1: PermissionToken?) {
+                        p1: PermissionToken?
+                    ) {
                         showRotationalDialogForPermission()
                     }
 
@@ -169,14 +178,18 @@ class CameraActivity : AppCompatActivity() {
                     val palu = MultipartBody.Part.createFormData("image", mampus, requestBody)
 
                     //we are using coroutine image loader (coil)
-                    binding.imageView.load(bitmap){
+                    binding.imageView.load(bitmap) {
                         crossfade(true)
                         crossfade(1000)
                         transformations(CircleCropTransformation())
                     }
 
-                    AppClient.instance.createPost(palu).enqueue(object : Callback<CreatePostResponse> {
-                        override fun onResponse(call: Call<CreatePostResponse>, response: Response<CreatePostResponse>) {
+                    AppClient.instance.createPost(palu).enqueue(object :
+                        Callback<CreatePostResponse> {
+                        override fun onResponse(
+                            call: Call<CreatePostResponse>,
+                            response: Response<CreatePostResponse>
+                        ) {
                             val responseText = "Response code: ${response.code()}\n" +
                                     "filename : ${response.body()?.filename}\n" +
                                     "input : ${response.body()?.prediction}\n" +
@@ -220,8 +233,10 @@ class CameraActivity : AppCompatActivity() {
 
     private fun showRotationalDialogForPermission() {
         AlertDialog.Builder(this)
-            .setMessage("It looks like you have turned off permissions"
-                    + "required for this feature. It can be enable under App settings!!!")
+            .setMessage(
+                "It looks like you have turned off permissions"
+                        + "required for this feature. It can be enable under App settings!!!"
+            )
 
             .setPositiveButton("Go TO SETTINGS") { _, _ ->
 

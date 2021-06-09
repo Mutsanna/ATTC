@@ -10,20 +10,11 @@
         tools:layout="@layout/fragment_home"
         android:name="com.mutsanna.attc.HomeFragment"/>
 
-    <fragment android:id="@+id/nav_history"
-        android:label="History"
-        tools:layout="@layout/fragment_history"
-        android:name="com.mutsanna.attc.HistoryFragment"/>
-
 
     <fragment android:id="@+id/nav_location"
         android:label="Location"
         tools:layout="@layout/fragment_location"
         android:name="com.mutsanna.attc.LocationFragment"/>
 
-    <fragment android:id="@+id/nav_abou"
-        android:label="About Us"
-        tools:layout="@layout/fragment_about"
-        android:name="com.mutsanna.attc.AboutFragment"/>
 
 </navigation>

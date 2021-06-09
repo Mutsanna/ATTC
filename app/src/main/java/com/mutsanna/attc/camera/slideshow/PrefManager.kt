@@ -1,9 +1,9 @@
-package com.mutsanna.attc
+package com.mutsanna.attc.camera.slideshow
 
 import android.content.Context
 import android.content.SharedPreferences
 
-public class PrefManager {
+public class PrefManager(slideActivity: SlideActivity) {
     var pref: SharedPreferences? = null
     var editor: SharedPreferences.Editor? = null
     var _context: Context? = null

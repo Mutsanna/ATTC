@@ -1,11 +1,13 @@
-package com.mutsanna.attc
+package com.mutsanna.attc.home
 
+import android.content.Intent
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentTransaction
+import com.mutsanna.attc.camera.CameraActivity
+import com.mutsanna.attc.HomeFragment
+import com.mutsanna.attc.LocationFragment
+import com.mutsanna.attc.R
 import com.mutsanna.attc.databinding.ActivityHomeBinding
 import kotlinx.android.synthetic.main.activity_home.*
 
@@ -19,12 +21,17 @@ class HomeActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         bottomNavigationView.background = null
-        bottomNavigationView.menu.getItem(2).isEnabled = false
+        bottomNavigationView.menu.getItem(1).isEnabled = false
+
+        binding.btnCamera.setOnClickListener {
+            val moveIntent = Intent(this@HomeActivity, CameraActivity::class.java)
+            startActivity(moveIntent)
+        }
 
         bottomNav()
     }
 
-    fun tampilkanFragment(nmFragment: Fragment?) {
+    private fun tampilkanFragment(nmFragment: Fragment?) {
         if (nmFragment != null) {
             supportFragmentManager
                 .beginTransaction()
@@ -38,22 +45,15 @@ class HomeActivity : AppCompatActivity() {
         tabMenu.itemIconTintList = null
         tampilkanFragment(HomeFragment())
         tabMenu.setOnNavigationItemSelectedListener { item ->
-            val fragment : Fragment?
             when (item.itemId) {
                 R.id.nav_home -> {
                     tampilkanFragment(HomeFragment())
+                    binding.txtJudul.text = resources.getString(R.string.judul_home)
                     return@setOnNavigationItemSelectedListener true
                 }
                 R.id.nav_location -> {
                     tampilkanFragment(LocationFragment())
-                    return@setOnNavigationItemSelectedListener true
-                }
-                R.id.nav_history -> {
-                    tampilkanFragment(HistoryFragment())
-                    return@setOnNavigationItemSelectedListener true
-                }
-                R.id.nav_abou -> {
-                    tampilkanFragment(AboutFragment())
+                    binding.txtJudul.text = resources.getString(R.string.judul_lokasi)
                     return@setOnNavigationItemSelectedListener true
                 }
             }

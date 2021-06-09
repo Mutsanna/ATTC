@@ -7,11 +7,6 @@
         android:title="@string/home" />
 
     <item
-        android:id="@+id/nav_history"
-        android:icon="@drawable/ic_history"
-        android:title="@string/history" />
-
-    <item
         android:id="@+id/cam"
         android:title="" />
 
@@ -19,10 +14,5 @@
         android:id="@+id/nav_location"
         android:icon="@drawable/ic_location"
         android:title="@string/location" />
-
-    <item
-        android:id="@+id/nav_abou"
-        android:icon="@drawable/ic_people"
-        android:title="@string/about_us" />
 
 </menu>
