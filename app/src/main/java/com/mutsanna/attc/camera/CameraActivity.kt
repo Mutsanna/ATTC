@@ -4,7 +4,6 @@ package com.mutsanna.attc.camera
 //import android.os.Environment
 //import androidx.core.content.FileProvider
 
-import android.R
 import android.app.Activity
 import android.content.ActivityNotFoundException
 import android.content.Intent
@@ -13,8 +12,6 @@ import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.provider.Settings
-import android.view.View
-import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -28,7 +25,6 @@ import com.karumi.dexter.listener.PermissionGrantedResponse
 import com.karumi.dexter.listener.PermissionRequest
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener
 import com.karumi.dexter.listener.single.PermissionListener
-import com.mutsanna.attc.camera.slideshow.PrefManager
 import com.mutsanna.attc.databinding.ActivityCameraBinding
 import com.mutsanna.attc.networking.AppClient
 import com.mutsanna.attc.networking.CreatePostResponse
