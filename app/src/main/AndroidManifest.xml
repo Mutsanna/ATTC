@@ -15,6 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ATTC">
         <activity android:name=".camera.slideshow.SlideActivity"></activity>
+        <activity android:name=".camera.slideshow.SlideActivity" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -26,7 +27,7 @@
                 android:resource="@xml/fileprovider" />
         </provider>
 
-        <activity android:name=".camera.CameraActivity"></activity>
+        <activity android:name=".camera.CameraActivity" />
         <activity android:name=".camera.OutputActivity" />
         <activity android:name=".RiwayatActivity" />
         <activity android:name=".home.HomeActivity">

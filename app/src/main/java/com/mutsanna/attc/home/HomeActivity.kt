@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.mutsanna.attc.camera.CameraActivity
 import com.mutsanna.attc.R
+import com.mutsanna.attc.camera.slideshow.SlideActivity
 import com.mutsanna.attc.databinding.ActivityHomeBinding
 import com.mutsanna.attc.location.LocationFragment
 import kotlinx.android.synthetic.main.activity_home.*
@@ -23,7 +24,7 @@ class HomeActivity : AppCompatActivity() {
         bottomNavigationView.menu.getItem(1).isEnabled = false
 
         binding.btnCamera.setOnClickListener {
-            val moveIntent = Intent(this@HomeActivity, CameraActivity::class.java)
+            val moveIntent = Intent(this@HomeActivity, SlideActivity::class.java)
             startActivity(moveIntent)
         }
 

@@ -9,10 +9,13 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="judul_home">Sesuaikan\nPackaging\nAnda</string>
-    <string name="slide_salah">Pengambilan Gambar\nyang Tidak Sesuai</string>
-    <string name="desc1">Gambar tidak Fokus\npada 1 jenis kue</string>
     <string name="judul_lokasi">Lokasi \nRumah Kemasan</string>
+    <string name="slide_salah">Pengambilan Gambar\nyang Tidak Sesuai</string>
     <string name="slide_benar">Pengambilan Gambar\nyang Benar</string>
+    <string name="desc1">Gambar tidak Fokus\npada 1 jenis kue</string>
+    <string name="desc2">Terlalu banyak Objek</string>
+    <string name="desc3">Gambar harus fokus</string>
+    <string name="desc4">Hanya Terdapat\n1 Jenis Kue</string>
     <string name="back">Back</string>
     <string name="next">Next</string>
     <string name="start">Lets Go</string>

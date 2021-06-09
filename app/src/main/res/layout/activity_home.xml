@@ -13,7 +13,7 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/sally"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
@@ -33,7 +33,7 @@
             android:textColor="#F8F8F8"
             android:textSize="32sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/imageView2"
+            app:layout_constraintEnd_toEndOf="@+id/sally"
             app:layout_constraintHorizontal_bias="0.212"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -47,7 +47,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView2"/>
+            app:layout_constraintTop_toBottomOf="@+id/sally"/>
 
 
         <FrameLayout
